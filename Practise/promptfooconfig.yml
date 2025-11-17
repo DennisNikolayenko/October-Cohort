@@ -1,0 +1,23 @@
+providers:
+  - id: openai:gpt-4o-mini
+  - id: openai:gpt-4o
+  - id: openai:gpt-5
+
+prompts:
+  - "Rewrite the following sentence so it is suitable for a LinkedIn post, keeping it close to the original: 'Here is a great example and the strongest argument for systematic LLM testing and evaluation.'" 
+
+tests:
+  - vars: {}
+    assert: 
+      - type: factuality
+        value: "Here is a great example and the strongest argument for systematic LLM testing and evaluation."
+      - type: llm-rubric
+        value: "The rewritten sentence should maintain a professional tone suitable for LinkedIn while closely adhering to the original content."
+      - type: javascript
+        value: "output.length <= 100"
+      - type: latency
+        threshold: 1000
+      - type: cost
+        threshold: 0.0009
+
+       

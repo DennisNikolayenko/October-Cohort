@@ -1,0 +1,27 @@
+providers:
+  - openai:gpt-5
+
+prompts:
+  - "Rewrite the following sentence so it is suitable for a LinkedIn post, keeping it close to the original: 'Here is a great example and the strongest argument for systematic LLM testing and evaluation.'"
+
+tests:
+  - vars: {}
+    assert:
+      - type: bleu
+        threshold: 0.5
+        value: "Here is a great example and the strongest argument for systematic LLM testing and evaluation."
+      - type: rouge-n
+        threshold: 0.5
+        value: "Here is a great example and the strongest argument for systematic LLM testing and evaluation."
+
+# BLEU
+# Focus: Precision
+# Measures: “How much of what the model wrote matches the reference?”
+# Think: “Did the model use the same words/phrases as the reference?”
+# Example: Model repeats most words from the original → high BLEU
+
+# ROUGE
+# Focus: Recall
+# Measures: “How much of the reference is covered by the model’s output?”
+# Think: “Did the model include the important content from the reference?”
+# Example: Model captures all key ideas, even with different wording → high ROUGE

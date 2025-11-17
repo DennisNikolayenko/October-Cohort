@@ -1,0 +1,12 @@
+providers:
+  # - id: openai:gpt-4o-mini # provider not supported by perplexity metric
+  - id: openai:gpt-4o
+
+prompts:
+  - "Explain gravity in one sentence."
+
+tests:
+  - vars: {}
+    assert:
+      - type: perplexity
+        threshold: 30

@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+description: "CSV Format Test Examples"
+
+prompts:
+  - file://prompts/prompt.txt
+
+providers:
+  - openai:gpt-4o-mini
+  - openai:gpt-4
+
+
+tests: 
+  # - file://tests/tests_with_metadata.csv # To run selected metadata tags - promptfoo eval --filter-metadata category=math 
+  - file://tests/tests_with_tags.csv # To run selected tags - promptfoo eval --filter-metadata tags=ai
