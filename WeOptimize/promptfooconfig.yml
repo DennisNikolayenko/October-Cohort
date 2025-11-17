@@ -9,7 +9,7 @@ providers:
       method: 'POST'
       headers:
         'Content-Type': 'application/json'
-        'x-api-key': '6e37c5dcf90692322057e2be4dd20addb06aa2cf6b485547432e88a0738dcf8c'
+        'x-api-key': 'WeOptimize-API-Key-Here'
       body:
         email: 'nikolayenkodennis@gmail.com'
         message: '{{prompt}}'
